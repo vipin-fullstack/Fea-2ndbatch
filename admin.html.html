@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - FEA</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    h2 { text-align: center; color: #b30000; }
+    input, textarea, button {
+      display: block;
+      margin: 0.5rem auto;
+      padding: 0.6rem;
+      width: 100%;
+      max-width: 400px;
+    }
+    .lesson-box {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <div style="text-align:center;">
+    <img src="fea-logo.png" alt="FEA Logo" width="150">
+  </div>
+
+  <!-- Heading -->
+  <h2>Admin Panel | Manage Lessons & Questions</h2>
+
+  <!-- Add Lesson -->
+  <div class="lesson-box">
+    <input type="text" id="lessonTitle" placeholder="Lesson Title">
+    <textarea id="lessonContent" placeholder="Lesson Content..." rows="5"></textarea>
+    <button onclick="addLesson()">Add Lesson</button>
+  </div>
+
+  <script>
+    function addLesson() {
+      const title = document.getElementById("lessonTitle").value;
+      const content = document.getElementById("lessonContent").value;
+
+      if (title && content) {
+        alert("Lesson added:\n" + title);
+        document.getElementById("lessonTitle").value = "";
+        document.getElementById("lessonContent").value = "";
+      } else {
+        alert("Please fill in both fields.");
+      }
+    }
+  </script>
+
+  <div style="text-align: center;">
+    <a href="login.html"><button>Logout</button></a>
+  </div>
+</body>
+</html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - FEA</title>
+  <link rel="stylesheet" href="style.css">
+</head>

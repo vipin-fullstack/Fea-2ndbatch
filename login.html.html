@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FEA Login</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 2rem; }
+    input, button { padding: 0.6rem; margin: 0.4rem; font-size: 1rem; width: 250px; }
+    .box { display: inline-block; border: 1px solid #ddd; padding: 2rem; border-radius: 10px; box-shadow: 0 0 10px #eee; }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <div>
+    <img src="fea-logo.png" alt="FEA Logo" width="150">
+  </div>
+
+  <!-- Heading -->
+  <h2 style="color: #006600;">Log in to Access Your FEA Learning Platform</h2>
+
+  <!-- Login Form -->
+  <div class="box">
+    <form>
+      <input type="text" placeholder="Enter your FEA ID" id="userId" required><br>
+      <input type="password" placeholder="Password" id="password" required><br>
+      <button type="button" onclick="login()">Login</button>
+    </form>
+  </div>
+
+  <!-- Login Logic -->
+  <script>
+    function login() {
+      const id = document.getElementById("userId").value;
+      const pass = document.getElementById("password").value;
+
+      const users = {
+        "S101": "ravi123",
+        "S102": "sita123",
+        "S103": "mohit123",
+        "S104": "kajal123",
+        "112006": "vipin2006"
+      };
+
+      if (users[id] && users[id] === pass) {
+        if (id.startsWith("S")) {
+          window.location.href = "student.html";
+        } else if (id === "112006") {
+          window.location.href = "admin.html";
+        }
+      } else {
+        alert("Invalid ID or Password");
+      }
+    }
+  </script>
+</body>
+</html>
